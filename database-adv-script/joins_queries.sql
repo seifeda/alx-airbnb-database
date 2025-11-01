@@ -9,7 +9,7 @@ SELECT
     b.total_price,
     b.status
 FROM Booking b
-    INNER JOIN  User
+    INNER JOIN    User
 u ON b.user_id = u.user_id;
 
 -- LEFT JOIN: Retrieve all properties and their reviews (include properties without reviews)
@@ -20,7 +20,8 @@ SELECT
     r.rating,
     r.comment
 FROM Property p
-    LEFT JOIN Review r ON p.property_id = r.property_id;
+    LEFT JOIN Review r ON p.property_id = r.property_id
+ORDER BY p.property_id;
 
 -- FULL OUTER JOIN: Retrieve all users and all bookings (include users with no bookings or orphan bookings)
 SELECT
